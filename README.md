@@ -56,3 +56,17 @@ Trial | Atoi() | Liam_atoi()
 10 | 30.3505 | 138.324
 Average | 31.506 | 137.6912
 Minimum | 32.5005 | 141.194
+
+### Differences
+
+Name | Difference
+-----|-----------
+Run Time | 0.0233985
+95th Percentile Latency | 0.0263753
+Mean Throughput | 106.1852
+
+To find the differences for Run Time and 95th Percentile Latency, I subtracted the average of my atoi function from the average of the standard atoi function. To find the Mean Throughput I did the opposite -I subtracted the average of the standard atoi function from the average of my version. My naive implementation's average fastest run time runs at %178.389 the speed of the standard implementation's average fastest run time; its average 95th percentile latency is %74.812 faster than the standard's; and the mean throughput of my function is 4.37 times higher than the standard atoi's average mean throughput.
+
+## Part 2
+
+I used a couple of methods to optimize my function further. One thing I did was eliminate the digit variable and combine all of the lines in the main for loop into one. I also took the iterating value and had it increment within the loop. The change that helped shave the run time the most though was switching from unsigned ints to regular ints, which seemed to help the most. I initially thought using unsigned ints would be faster, as the compiler wouldn't have to worry about the values being less than 0, but I'm guessing they added latency by having special conditions, unlike regular integers. 
